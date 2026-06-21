@@ -21,10 +21,10 @@ export default function CTA() {
               ✨ 現在就開始
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              準備改變您的生活嗎？
+              準備試試看嗎？
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              加入已經在使用 iWantPo 和 FamilyPlay 的用戶，解決您的實際問題。
+              探索我們的實用工具，解決日常問題。
             </p>
           </div>
 
@@ -63,29 +63,27 @@ export default function CTA() {
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
                 <p className="text-4xl font-bold mb-2">✓</p>
-                <p className="text-lg font-semibold mb-1">完全免費</p>
-                <p className="text-blue-100">30 天免費試用，無需信用卡</p>
+                <p className="text-lg font-semibold mb-1">輕量設計</p>
+                <p className="text-blue-100">簡潔的介面，易於上手</p>
               </div>
               <div>
                 <p className="text-4xl font-bold mb-2">⚡</p>
-                <p className="text-lg font-semibold mb-1">立即開始</p>
-                <p className="text-blue-100">30秒快速設置，無需複雜配置</p>
+                <p className="text-lg font-semibold mb-1">快速載入</p>
+                <p className="text-blue-100">最小化性能開銷，快速反應</p>
               </div>
               <div>
                 <p className="text-4xl font-bold mb-2">♾️</p>
-                <p className="text-lg font-semibold mb-1">持續更新</p>
-                <p className="text-blue-100">每月新功能，根據反饋改進</p>
+                <p className="text-lg font-semibold mb-1">持續改進</p>
+                <p className="text-blue-100">根據使用者反饋持續優化</p>
               </div>
             </div>
           </div>
 
           {/* 底部 CTA */}
           <div className="text-center">
-            <p className="text-gray-600 mb-6">還在猶豫？看看其他用戶怎麼說</p>
+            <p className="text-gray-600 mb-6">了解更多，立即開始體驗</p>
             <div className="inline-flex items-center gap-4">
-              <StaticStars />
-              <span className="text-gray-400">|</span>
-              <span className="text-sm text-gray-600">來自 100+ 用戶的評價</span>
+              <span className="text-sm text-gray-600">實用工具，為您節省時間</span>
             </div>
           </div>
         </div>

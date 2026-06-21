@@ -27,7 +27,7 @@ export const projects = [
     title: 'BingoKing',
     description: '台灣彩券輔助決策系統',
     longDescription: '專為台灣 BingoBingo 設計的智能輔助決策系統，提供號碼預測分析、歷史數據統計和智能推薦工具。',
-    url: process.env.NEXT_PUBLIC_PROJECT_3_URL || 'https://bingoking.nomoneydaddy.app',
+    url: process.env.NEXT_PUBLIC_PROJECT_3_URL || '#',
     github: process.env.NEXT_PUBLIC_PROJECT_3_GITHUB || '#',
     features: ['號碼預測分析', '歷史數據統計', '智能推薦', '趨勢分析'],
     icon: '🎰',
