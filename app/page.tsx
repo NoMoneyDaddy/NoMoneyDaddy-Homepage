@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
@@ -9,15 +6,9 @@ import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 import GoogleAds from '@/components/GoogleAds'
 
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) return null
-
   return (
     <main id="main-content" className="min-h-screen overflow-hidden">
       <Header />
