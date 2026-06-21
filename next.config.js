@@ -16,6 +16,10 @@ const nextConfig = {
       },
     ],
   },
+  onDemandEntries: {
+    maxInactiveAge: 60 * 1000,
+    pagesBufferLength: 5,
+  },
   headers: async () => {
     return [
       {
