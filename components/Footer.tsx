@@ -11,10 +11,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold gradient-text mb-4">
-              NoMoneyDaddy
+              NoMoneyDaddy<br /><span className="text-sm font-semibold text-gray-700">奶爸實驗室</span>
             </h3>
-            <p className="text-gray-600">
-              為忙碌的現代人打造實用的工具和解決方案。
+            <p className="text-gray-600 text-sm">
+              為忙碌的現代人和 Shopee 分潤人員打造的實用應用。解決實際問題，提升生活效率。
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export default function Footer() {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-600 text-sm">
-              © {currentYear} NoMoneyDaddy. 版權所有。
+              © {currentYear} NoMoneyDaddy 奶爸實驗室。版權所有。
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
               {socialLinks.github !== '#' && (

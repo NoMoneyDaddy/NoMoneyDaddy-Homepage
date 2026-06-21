@@ -7,17 +7,18 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Features', href: '#features' },
-    { label: 'Contact', href: '#contact' },
+    { label: '首頁', href: '#home' },
+    { label: '作品', href: '#projects' },
+    { label: '特色', href: '#features' },
+    { label: '聯絡', href: '#contact' },
   ]
 
   return (
     <header className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
       <nav className="section-container flex justify-between items-center h-16">
-        <Link href="#home" className="text-2xl font-bold text-blue-600" aria-label="NoMoneyDaddy home">
-          NoMoneyDaddy
+        <Link href="#home" className="text-lg font-bold text-blue-600" aria-label="NoMoneyDaddy 奶爸實驗室">
+          <span className="block text-sm font-semibold">NoMoneyDaddy</span>
+          <span className="text-xs text-gray-600">奶爸實驗室</span>
         </Link>
 
         <div className="hidden md:flex gap-8">

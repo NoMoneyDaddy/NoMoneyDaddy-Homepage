@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'NoMoneyDaddy - Portfolio & Projects',
-  description: 'Discover innovative projects including iWantPo and FamilyPlay',
+  title: 'NoMoneyDaddy 奶爸實驗室 - 解決現實問題的工具',
+  description: '奶爸實驗室｜為 Shopee 分潤人員和忙碌父母打造的實用應用。iWantPo 自動發文平台 × FamilyPlay 親子遊戲',
   openGraph: {
-    title: 'NoMoneyDaddy - Portfolio & Projects',
-    description: 'Discover innovative projects including iWantPo and FamilyPlay',
+    title: 'NoMoneyDaddy 奶爸實驗室',
+    description: '為 Shopee 分潤人員和忙碌父母打造的實用應用',
     type: 'website',
   },
 }
@@ -22,7 +22,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-adsense-account" content="ca-pub-2955827057895484" />
-        <title>NoMoneyDaddy - Portfolio & Projects</title>
+        <title>NoMoneyDaddy 奶爸實驗室 - 解決現實問題的工具</title>
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2955827057895484"

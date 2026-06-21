@@ -8,7 +8,7 @@ export default function Hero() {
     >
       <div className="section-container relative z-10 text-center animate-slideUp">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900">
-          解決現實問題的工具
+          NoMoneyDaddy<br /><span className="text-4xl md:text-5xl text-blue-600">奶爸實驗室</span>
         </h1>
 
         <p className="text-lg md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -46,15 +46,15 @@ export default function Hero() {
         <div className="mt-16 grid grid-cols-3 gap-8 text-center">
           <div>
             <p className="text-3xl font-bold text-blue-600">2</p>
-            <p className="text-gray-600">個專案</p>
+            <p className="text-gray-600">個實用工具</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-blue-600">MVP</p>
-            <p className="text-gray-600">版本階段</p>
+            <p className="text-3xl font-bold text-blue-600">✓</p>
+            <p className="text-gray-600">免費試用</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-blue-600">開源</p>
-            <p className="text-gray-600">源碼公開</p>
+            <p className="text-3xl font-bold text-blue-600">♾️</p>
+            <p className="text-gray-600">持續更新</p>
           </div>
         </div>
       </div>
