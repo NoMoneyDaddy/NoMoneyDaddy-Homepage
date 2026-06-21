@@ -4,57 +4,100 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
+      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
     >
-      <div className="section-container relative z-10 text-center animate-slideUp">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900">
-          我的網頁作品
-        </h1>
+      {/* 背景漸變和裝飾 */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-white to-white" />
+      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
 
-        <p className="text-lg md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          一些實驗和練習專案
-        </p>
+      <div className="section-container relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* 左側：文案 */}
+          <div className="animate-slideUp">
+            <div className="mb-6">
+              <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+                🚀 解決現實問題的工具
+              </span>
+            </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#projects"
-            className="btn-primary inline-flex items-center justify-center"
-          >
-            查看專案
-            <svg
-              className="w-5 h-5 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </a>
-          <a
-            href="#contact"
-            className="btn-secondary inline-flex items-center justify-center"
-          >
-            聯絡我們
-          </a>
-        </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-gray-900">
+              NoMoneyDaddy<br />
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                奶爸實驗室
+              </span>
+            </h1>
 
-        <div className="mt-16 grid grid-cols-3 gap-8 text-center">
-          <div>
-            <p className="text-3xl font-bold text-blue-600">2</p>
-            <p className="text-gray-600">個專案</p>
+            <p className="text-xl text-gray-600 mb-4 leading-relaxed">
+              為忙碌的現代人打造的實用應用
+            </p>
+
+            <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-xl">
+              <span className="font-semibold">iWantPo：</span> Shopee 分潤人員的自動化行銷工具
+              <br className="hidden md:block" />
+              <span className="font-semibold">FamilyPlay：</span> 現代父母的 30 秒親子互動方案
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#projects"
+                className="btn-primary inline-flex items-center justify-center gap-2 hover:shadow-lg hover:-translate-y-1 transition-all"
+              >
+                查看作品
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+              <a
+                href="#contact"
+                className="btn-secondary inline-flex items-center justify-center gap-2"
+              >
+                了解更多
+              </a>
+            </div>
+
+            {/* 統計數據 */}
+            <div className="mt-12 grid grid-cols-3 gap-4 md:gap-8">
+              <div className="border-l-4 border-blue-600 pl-4">
+                <p className="text-3xl font-bold text-gray-900">2</p>
+                <p className="text-sm text-gray-600">個實用工具</p>
+              </div>
+              <div className="border-l-4 border-purple-600 pl-4">
+                <p className="text-3xl font-bold text-gray-900">✓</p>
+                <p className="text-sm text-gray-600">免費試用</p>
+              </div>
+              <div className="border-l-4 border-pink-600 pl-4">
+                <p className="text-3xl font-bold text-gray-900">♾️</p>
+                <p className="text-sm text-gray-600">持續更新</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <p className="text-3xl font-bold text-blue-600">MVP</p>
-            <p className="text-gray-600">版本階段</p>
-          </div>
-          <div>
-            <p className="text-3xl font-bold text-blue-600">開源</p>
-            <p className="text-gray-600">源碼公開</p>
+
+          {/* 右側：視覺效果 */}
+          <div className="hidden lg:block">
+            <div className="relative h-96">
+              {/* iWantPo 卡片 */}
+              <div className="absolute top-0 right-0 w-64 bg-white rounded-2xl shadow-2xl p-6 transform hover:scale-105 transition-transform duration-300">
+                <div className="text-4xl mb-4">📱</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">iWantPo</h3>
+                <p className="text-sm text-gray-600">自動化 Threads 發文平台</p>
+                <div className="mt-4 flex items-center gap-2">
+                  <div className="flex-1 bg-blue-200 h-2 rounded-full" style={{ width: '80%' }} />
+                  <span className="text-xs text-gray-500">80%</span>
+                </div>
+              </div>
+
+              {/* FamilyPlay 卡片 */}
+              <div className="absolute bottom-0 left-0 w-64 bg-white rounded-2xl shadow-2xl p-6 transform hover:scale-105 transition-transform duration-300">
+                <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">FamilyPlay</h3>
+                <p className="text-sm text-gray-600">30秒親子互動遊戲</p>
+                <div className="mt-4 flex items-center gap-2">
+                  <div className="flex-1 bg-purple-200 h-2 rounded-full" style={{ width: '90%' }} />
+                  <span className="text-xs text-gray-500">90%</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
