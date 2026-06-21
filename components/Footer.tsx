@@ -8,18 +8,18 @@ export default function Footer() {
   return (
     <footer className="relative bg-white border-t border-gray-200">
       <div className="section-container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold gradient-text mb-4">
-              NoMoneyDaddy
+              NoMoneyDaddy<br /><span className="text-sm font-semibold text-gray-700">奶爸實驗室</span>
             </h3>
-            <p className="text-gray-600">
-              為現代世界構建創新解決方案。
+            <p className="text-gray-600 text-sm">
+              為忙碌的現代人和 Shopee 分潤人員打造的實用應用。解決實際問題，提升生活效率。
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-gray-900">網頁作品</h4>
+            <h4 className="font-semibold mb-4 text-gray-900">我的作品</h4>
             <ul className="space-y-2">
               {projects.map((project) => (
                 <li key={project.id}>
@@ -37,29 +37,19 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-gray-900">GitHub 源碼</h4>
-            <ul className="space-y-2">
-              {projects.map((project) => (
-                <li key={project.id}>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
-                  >
-                    {project.title} 源碼
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4 text-gray-900">法律</h4>
+            <h4 className="font-semibold mb-4 text-gray-900">資訊</h4>
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="/about"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  關於我們
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/privacy"
                   className="text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   隱私政策
@@ -67,12 +57,22 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/terms"
                   className="text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   服務條款
                 </a>
               </li>
+              {socialLinks.email !== 'contact@example.com' && (
+                <li>
+                  <a
+                    href={`mailto:${socialLinks.email}`}
+                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                  >
+                    📧 聯繫我們
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function Footer() {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-600 text-sm">
-              © {currentYear} NoMoneyDaddy. 版權所有。
+              © {currentYear} NoMoneyDaddy 奶爸實驗室。版權所有。
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
               {socialLinks.github !== '#' && (
