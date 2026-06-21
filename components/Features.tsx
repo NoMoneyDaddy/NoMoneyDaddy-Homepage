@@ -1,38 +1,46 @@
 'use client'
 
+import { ArrowIcon } from './ArrowIcon'
+
 export default function Features() {
   const features = [
     {
+      id: 'intuitive',
       title: '直覺易用',
       description: '無需複雜學習，30秒快速上手。設計簡潔專注，避免過度功能。',
       icon: '✨',
       color: 'from-blue-500 to-blue-600',
     },
     {
+      id: 'fast',
       title: '快速高效',
       description: '輕量級設計，快速加載和響應。優化每一個互動，提升用戶體驗。',
       icon: '⚡',
       color: 'from-yellow-500 to-orange-600',
     },
     {
+      id: 'secure',
       title: '可靠安全',
       description: '數據加密，隱私保護優先。您的信息安全是我們的首要責任。',
       icon: '🔒',
       color: 'from-green-500 to-emerald-600',
     },
     {
+      id: 'devices',
       title: '全設備支持',
       description: '手機、平板、電腦完美適配。無論何時何地，都能無縫使用。',
       icon: '📱',
       color: 'from-purple-500 to-pink-600',
     },
     {
+      id: '24-7',
       title: '24/7 可用',
       description: '隨時隨地使用，無需安裝複雜軟體。在線應用，即時訪問。',
       icon: '🌙',
       color: 'from-indigo-500 to-purple-600',
     },
     {
+      id: 'updates',
       title: '持續更新',
       description: '根據用戶反饋不斷改進。每月新功能，每周性能優化。',
       icon: '🚀',
@@ -63,9 +71,9 @@ export default function Features() {
 
         {/* 特色網格 */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <div
-              key={index}
+              key={feature.id}
               className="group relative overflow-hidden rounded-2xl bg-white p-8 border border-gray-100 hover:border-transparent transition-all duration-300 hover:shadow-2xl"
             >
               {/* 背景漸變 */}
@@ -94,9 +102,7 @@ export default function Features() {
                   className="mt-6 inline-flex items-center text-blue-600 font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300"
                 >
                   了解更多
-                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <ArrowIcon className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
                 </a>
               </div>
             </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { projects } from '@/config/projects'
+import { ArrowIcon } from './ArrowIcon'
 
 export default function CTA() {
   return (
@@ -50,9 +51,7 @@ export default function CTA() {
                   className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 group-hover:gap-3 transition-all duration-300"
                 >
                   開始免費試用
-                  <svg className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
+                  <ArrowIcon className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" />
                 </a>
               </div>
             ))}
