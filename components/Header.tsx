@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-700">
       <nav className="section-container flex justify-between items-center h-16">
-        <Link href="#" className="text-2xl font-bold gradient-text">
+        <Link href="#home" className="text-2xl font-bold gradient-text" aria-label="NoMoneyDaddy home">
           NoMoneyDaddy
         </Link>
 
@@ -35,12 +35,15 @@ export default function Header() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 hover:bg-slate-800 rounded-lg"
+          aria-label="Toggle navigation menu"
+          aria-expanded={isOpen}
         >
           <svg
             className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"

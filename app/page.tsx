@@ -19,7 +19,7 @@ export default function Home() {
   if (!mounted) return null
 
   return (
-    <main className="min-h-screen overflow-hidden">
+    <main id="main-content" className="min-h-screen overflow-hidden">
       <Header />
       <Hero />
       <GoogleAds />
