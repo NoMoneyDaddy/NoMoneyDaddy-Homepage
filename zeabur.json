@@ -1,0 +1,10 @@
+{
+  "build": {
+    "builder": "nodejs"
+  },
+  "serverless": {
+    "installCommand": "npm install",
+    "buildCommand": "npm run build",
+    "startCommand": "npm start"
+  }
+}
