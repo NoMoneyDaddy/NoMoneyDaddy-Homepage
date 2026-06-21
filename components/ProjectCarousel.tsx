@@ -56,8 +56,6 @@ export default function ProjectCarousel() {
     setIsAutoPlay(false)
   }
 
-  const project = PROJECTS[currentSlide]
-
   return (
     <section className="w-full py-12 bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-96">

@@ -2,6 +2,7 @@ import ProjectCarousel from '@/components/ProjectCarousel'
 import AdSenseCarousel from '@/components/AdSenseCarousel'
 
 export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 export default function Home() {
   return (
