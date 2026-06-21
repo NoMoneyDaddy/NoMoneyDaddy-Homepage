@@ -39,19 +39,17 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-gray-900">資訊</h4>
             <ul className="space-y-2">
-              {socialLinks.email !== 'contact@example.com' && (
-                <li>
-                  <a
-                    href={`mailto:${socialLinks.email}`}
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
-                  >
-                    📧 {socialLinks.email}
-                  </a>
-                </li>
-              )}
               <li>
                 <a
-                  href="#"
+                  href="/about"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  關於我們
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/privacy"
                   className="text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   隱私政策
@@ -59,12 +57,22 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/terms"
                   className="text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   服務條款
                 </a>
               </li>
+              {socialLinks.email !== 'contact@example.com' && (
+                <li>
+                  <a
+                    href={`mailto:${socialLinks.email}`}
+                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                  >
+                    📧 聯繫我們
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>
