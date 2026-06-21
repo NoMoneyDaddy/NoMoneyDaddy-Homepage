@@ -1,14 +1,6 @@
-export function ArrowIcon({
-  className = "w-4 h-4",
-  direction = "right"
-}: {
-  className?: string
-  direction?: "right" | "left"
-}) {
-  const pathD = direction === "right"
-    ? "M9 5l7 7-7 7"
-    : "M15 19l-7-7 7-7"
+const ARROW_PATH = "M9 5l7 7-7 7"
 
+export function ArrowIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -20,7 +12,7 @@ export function ArrowIcon({
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d={pathD}
+        d={ARROW_PATH}
       />
     </svg>
   )

@@ -2,6 +2,8 @@
 
 import { projects } from '@/config/projects'
 import { ArrowIcon } from './ArrowIcon'
+import { StaticStars } from './StaticStars'
+import { getExternalLinkProps } from '@/lib/links'
 
 export default function CTA() {
   return (
@@ -46,8 +48,7 @@ export default function CTA() {
 
                 <a
                   href={project.url}
-                  target={project.url === '#' ? undefined : '_blank'}
-                  rel={project.url === '#' ? undefined : 'noopener noreferrer'}
+                  {...getExternalLinkProps(project.url)}
                   className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 group-hover:gap-3 transition-all duration-300"
                 >
                   開始免費試用
@@ -82,14 +83,7 @@ export default function CTA() {
           <div className="text-center">
             <p className="text-gray-600 mb-6">還在猶豫？看看其他用戶怎麼說</p>
             <div className="inline-flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <div className="flex gap-1" aria-hidden="true">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">★</span>
-                  ))}
-                </div>
-                <span className="text-sm text-gray-600">4.9 / 5.0</span>
-              </div>
+              <StaticStars />
               <span className="text-gray-400">|</span>
               <span className="text-sm text-gray-600">來自 100+ 用戶的評價</span>
             </div>

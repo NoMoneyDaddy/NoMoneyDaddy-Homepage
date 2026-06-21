@@ -1,6 +1,8 @@
 'use client'
 
 import { projects } from '@/config/projects'
+import { getExternalLinkProps } from '@/lib/links'
+import { ANIMATION } from '@/lib/constants'
 
 export default function Projects() {
   return (
@@ -25,7 +27,7 @@ export default function Projects() {
             <div
               key={project.id}
               className="group relative"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * ANIMATION.staggerDelay}s` }}
             >
               {/* 漸變背景 */}
               <div className={`absolute inset-0 bg-gradient-to-br ${project.color} rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
@@ -37,8 +39,7 @@ export default function Projects() {
                   <div className="text-6xl">{project.icon}</div>
                   <a
                     href={project.url}
-                    target={project.url === '#' ? undefined : '_blank'}
-                    rel={project.url === '#' ? undefined : 'noopener noreferrer'}
+                    {...getExternalLinkProps(project.url)}
                     aria-label={`前往 ${project.title} 網站`}
                     className="p-3 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0"
                   >
@@ -69,8 +70,7 @@ export default function Projects() {
                 {/* 按鈕 */}
                 <a
                   href={project.url}
-                  target={project.url === '#' ? undefined : '_blank'}
-                  rel={project.url === '#' ? undefined : 'noopener noreferrer'}
+                  {...getExternalLinkProps(project.url)}
                   className="block w-full btn-primary text-center group/btn hover:shadow-lg hover:-translate-y-1 transition-all"
                 >
                   <span>立即試用</span>
