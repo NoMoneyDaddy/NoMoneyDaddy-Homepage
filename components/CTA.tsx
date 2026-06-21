@@ -2,7 +2,6 @@
 
 import { projects } from '@/config/projects'
 import { ArrowIcon } from './ArrowIcon'
-import { StaticStars } from './StaticStars'
 import { getExternalLinkProps } from '@/lib/links'
 
 export default function CTA() {
