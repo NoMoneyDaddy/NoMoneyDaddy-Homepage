@@ -10,7 +10,8 @@ const PROJECTS = [
     description: 'Shopee 分潤人員的自動化社群行銷工具',
     features: '一鍵生成吸引人的貼文、分潤文案管理、智能推廣',
     url: 'https://iwantpo.nomoneydaddy.app',
-    color: 'from-blue-500 to-cyan-500',
+    gradient: 'from-blue-600 via-blue-500 to-cyan-400',
+    icon_bg: 'bg-blue-500/20',
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const PROJECTS = [
     description: '忙碌父母的親子互動遊戲平台',
     features: '30秒快速開始、即時互動遊戲、無需複雜設置',
     url: 'https://familyplay.nomoneydaddy.app',
-    color: 'from-purple-500 to-pink-500',
+    gradient: 'from-violet-600 via-purple-500 to-pink-400',
+    icon_bg: 'bg-purple-500/20',
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ const PROJECTS = [
     description: '台灣彩券的智能輔助決策系統',
     features: '號碼預測分析、歷史數據統計、智能推薦',
     url: 'https://bingoking.nomoneydaddy.app',
-    color: 'from-orange-500 to-red-500',
+    gradient: 'from-amber-600 via-orange-500 to-red-400',
+    icon_bg: 'bg-orange-500/20',
   },
 ]
 
@@ -38,11 +41,9 @@ export default function ProjectCarousel() {
 
   useEffect(() => {
     if (!isAutoPlay) return
-
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % PROJECTS.length)
     }, 5000)
-
     return () => clearInterval(timer)
   }, [isAutoPlay])
 
@@ -57,86 +58,105 @@ export default function ProjectCarousel() {
   }
 
   return (
-    <section className="w-full py-12 bg-gradient-to-b from-gray-900 to-gray-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-96">
+    <div
+      className="relative w-full h-96 rounded-xl overflow-hidden group"
+      onMouseEnter={() => setIsAutoPlay(false)}
+      onMouseLeave={() => setIsAutoPlay(true)}
+    >
+      {/* 卡片背景 */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/50" />
+
+      {/* 項目卡片 */}
+      {PROJECTS.map((proj, index) => (
         <div
-          className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl"
-          onMouseEnter={() => setIsAutoPlay(false)}
-          onMouseLeave={() => setIsAutoPlay(true)}
+          key={proj.id}
+          className={`absolute inset-0 transition-opacity duration-700 ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
         >
-          {/* 項目卡片 */}
-          {PROJECTS.map((proj, index) => (
-            <div
-              key={proj.id}
-              className={`absolute inset-0 bg-gradient-to-br ${proj.color} transition-opacity duration-500 p-8 md:p-12 flex flex-col justify-between ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
-              }`}
-            >
-              {/* 上方內容 */}
-              <div className="text-white">
-                <div className="text-6xl md:text-7xl mb-4">{proj.icon}</div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">{proj.title}</h2>
-                <p className="text-lg md:text-xl text-white/90 mb-6 max-w-2xl">
-                  {proj.description}
-                </p>
-                <p className="text-sm md:text-base text-white/80">
-                  {proj.features}
-                </p>
-              </div>
+          {/* 漸層背景 */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${proj.gradient} opacity-5`} />
 
-              {/* 下方按鈕 */}
-              <div>
-                <a
-                  href={proj.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-white text-gray-900 px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
-                >
-                  立即試用 →
-                </a>
+          {/* 內容 */}
+          <div className="relative h-full p-6 md:p-8 flex flex-col justify-between">
+            {/* 上方 */}
+            <div>
+              <div className={`w-14 h-14 rounded-lg ${proj.icon_bg} flex items-center justify-center text-3xl mb-4 backdrop-blur`}>
+                {proj.icon}
               </div>
+              <h3 className="text-3xl font-bold text-white mb-2">{proj.title}</h3>
+              <p className="text-slate-300 text-sm leading-relaxed">{proj.description}</p>
             </div>
-          ))}
 
-          {/* 導航按鈕 */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 md:p-3 rounded-full transition-all duration-300"
-            aria-label="Previous project"
-          >
-            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+            {/* 中間功能 */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {proj.features.split('、').map((feature, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 text-xs font-medium text-slate-300 bg-slate-700/40 rounded-full border border-slate-600/30"
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
 
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 md:p-3 rounded-full transition-all duration-300"
-            aria-label="Next project"
-          >
-            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-
-          {/* 指示點 */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-3">
-            {PROJECTS.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setCurrentSlide(index)
-                  setIsAutoPlay(false)
-                }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/70'
-                }`}
-                aria-label={`Go to project ${index + 1}`}
-              />
-            ))}
+            {/* 下方按鈕 */}
+            <div>
+              <a
+                href={proj.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r ${proj.gradient} hover:shadow-lg hover:scale-105 transition-all duration-300 group/btn`}
+              >
+                立即試用
+                <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
+      ))}
+
+      {/* 導航按鈕 */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2 rounded-lg bg-slate-700/50 hover:bg-slate-600 text-white transition-all duration-300 opacity-0 group-hover:opacity-100"
+        aria-label="Previous"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2 rounded-lg bg-slate-700/50 hover:bg-slate-600 text-white transition-all duration-300 opacity-0 group-hover:opacity-100"
+        aria-label="Next"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* 指示點 */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {PROJECTS.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              setCurrentSlide(index)
+              setIsAutoPlay(false)
+            }}
+            className={`transition-all duration-300 rounded-full ${
+              index === currentSlide
+                ? 'w-8 h-2 bg-white'
+                : 'w-2 h-2 bg-white/40 hover:bg-white/60'
+            }`}
+            aria-label={`Slide ${index + 1}`}
+          />
+        ))}
       </div>
-    </section>
+    </div>
   )
 }

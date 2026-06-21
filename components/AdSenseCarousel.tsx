@@ -7,18 +7,31 @@ export default function AdSenseCarousel() {
   const [isAutoPlay, setIsAutoPlay] = useState(true)
 
   const slides = [
-    { id: 1, color: 'from-blue-500 to-blue-600' },
-    { id: 2, color: 'from-purple-500 to-purple-600' },
-    { id: 3, color: 'from-cyan-500 to-blue-500' },
+    {
+      id: 1,
+      title: '精選推薦',
+      gradient: 'from-blue-600 via-blue-500 to-cyan-400',
+      icon: '⭐',
+    },
+    {
+      id: 2,
+      title: '合作夥伴',
+      gradient: 'from-violet-600 via-purple-500 to-pink-400',
+      icon: '🤝',
+    },
+    {
+      id: 3,
+      title: '優質內容',
+      gradient: 'from-amber-600 via-orange-500 to-red-400',
+      icon: '✨',
+    },
   ]
 
   useEffect(() => {
     if (!isAutoPlay) return
-
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 4000)
-
     return () => clearInterval(timer)
   }, [isAutoPlay, slides.length])
 
@@ -38,77 +51,81 @@ export default function AdSenseCarousel() {
   }
 
   return (
-    <section className="w-full py-12 bg-gray-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-80">
-        <div
-          className="relative w-full h-full rounded-2xl overflow-hidden bg-gray-700 shadow-2xl"
-          onMouseEnter={() => setIsAutoPlay(false)}
-          onMouseLeave={() => setIsAutoPlay(true)}
-        >
-          {/* 幻燈片 */}
-          <div className="relative w-full h-full">
-            {slides.map((slide, index) => (
-              <div
-                key={slide.id}
-                className={`absolute inset-0 bg-gradient-to-br ${slide.color} transition-opacity duration-500 flex items-center justify-center ${
-                  index === currentSlide ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <div className="text-center">
-                  <p className="text-white text-lg md:text-xl font-bold mb-4">廣告位置 {slide.id}</p>
-                  <p className="text-white/80 text-sm md:text-base">Google AdSense 廣告在此展示</p>
-                  <p className="text-white/60 text-xs mt-4">支持網站營運 ❤️</p>
-                </div>
+    <div
+      className="relative w-full h-96 rounded-xl overflow-hidden group"
+      onMouseEnter={() => setIsAutoPlay(false)}
+      onMouseLeave={() => setIsAutoPlay(true)}
+    >
+      {/* 背景 */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/50" />
+
+      {/* 幻燈片 */}
+      <div className="relative w-full h-full">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-700 ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            }`}
+          >
+            {/* 漸層背景 */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} opacity-5`} />
+
+            {/* 內容 */}
+            <div className="relative h-full p-8 flex flex-col items-center justify-center">
+              <div className="text-6xl mb-4">{slide.icon}</div>
+              <h3 className="text-3xl font-bold text-white mb-3 text-center">{slide.title}</h3>
+              <p className="text-slate-300 text-center text-sm mb-6 max-w-xs">
+                與優質內容與合作夥伴分享價值
+              </p>
+
+              {/* AdSense 佔位符 */}
+              <div className="w-full max-w-xs h-32 rounded-lg bg-slate-700/30 border border-slate-600/30 flex items-center justify-center">
+                <p className="text-slate-400 text-xs text-center">Google AdSense 廣告</p>
               </div>
-            ))}
+
+              <p className="text-slate-500 text-xs mt-4">支持網站營運 ❤️</p>
+            </div>
           </div>
-
-          {/* 導航按鈕 */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 md:p-3 rounded-full transition-all duration-300"
-            aria-label="Previous slide"
-          >
-            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 md:p-3 rounded-full transition-all duration-300"
-            aria-label="Next slide"
-          >
-            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-
-          {/* 指示點 */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-3">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/70'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* 自動播放指示 */}
-        <div className="text-center mt-6">
-          <button
-            onClick={() => setIsAutoPlay(!isAutoPlay)}
-            className="text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            {isAutoPlay ? '⏸ 暫停' : '▶ 繼續'} 自動播放
-          </button>
-        </div>
+        ))}
       </div>
-    </section>
+
+      {/* 導航按鈕 */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2 rounded-lg bg-slate-700/50 hover:bg-slate-600 text-white transition-all duration-300 opacity-0 group-hover:opacity-100"
+        aria-label="Previous"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2 rounded-lg bg-slate-700/50 hover:bg-slate-600 text-white transition-all duration-300 opacity-0 group-hover:opacity-100"
+        aria-label="Next"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* 指示點 */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`transition-all duration-300 rounded-full ${
+              index === currentSlide
+                ? 'w-8 h-2 bg-white'
+                : 'w-2 h-2 bg-white/40 hover:bg-white/60'
+            }`}
+            aria-label={`Slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
   )
 }
