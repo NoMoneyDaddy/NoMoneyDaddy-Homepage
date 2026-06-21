@@ -38,11 +38,10 @@ export default function AdSenseCarousel() {
   }
 
   return (
-    <section className="py-12 relative">
-      <div className="section-container">
-        {/* 輪播容器 */}
+    <section className="w-full py-12 bg-gray-800">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-80">
         <div
-          className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden bg-gray-200 shadow-lg"
+          className="relative w-full h-full rounded-2xl overflow-hidden bg-gray-700 shadow-2xl"
           onMouseEnter={() => setIsAutoPlay(false)}
           onMouseLeave={() => setIsAutoPlay(true)}
         >
@@ -56,49 +55,43 @@ export default function AdSenseCarousel() {
                 }`}
               >
                 <div className="text-center">
-                  <p className="text-white text-sm md:text-lg font-medium mb-2">廣告位置 {slide.id}</p>
-                  <p className="text-white/80 text-xs md:text-sm">Google AdSense 廣告將在此展示</p>
+                  <p className="text-white text-lg md:text-xl font-bold mb-4">廣告位置 {slide.id}</p>
+                  <p className="text-white/80 text-sm md:text-base">Google AdSense 廣告在此展示</p>
+                  <p className="text-white/60 text-xs mt-4">支持網站營運 ❤️</p>
                 </div>
-                {/* Google AdSense 位置 */}
-                <script
-                  async
-                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2955827057895484"
-                  crossOrigin="anonymous"
-                ></script>
               </div>
             ))}
           </div>
 
-          {/* 上一個按鈕 */}
+          {/* 導航按鈕 */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all duration-300"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 md:p-3 rounded-full transition-all duration-300"
             aria-label="Previous slide"
           >
-            <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
-          {/* 下一個按鈕 */}
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all duration-300"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 md:p-3 rounded-full transition-all duration-300"
             aria-label="Next slide"
           >
-            <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
           {/* 指示點 */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-3">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? 'bg-white w-6 md:w-8' : 'bg-white/50 hover:bg-white/70'
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/70'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -107,10 +100,10 @@ export default function AdSenseCarousel() {
         </div>
 
         {/* 自動播放指示 */}
-        <div className="text-center mt-4">
+        <div className="text-center mt-6">
           <button
             onClick={() => setIsAutoPlay(!isAutoPlay)}
-            className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
           >
             {isAutoPlay ? '⏸ 暫停' : '▶ 繼續'} 自動播放
           </button>

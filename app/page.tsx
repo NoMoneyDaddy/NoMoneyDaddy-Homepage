@@ -1,19 +1,13 @@
-import Header from '@/components/Header'
-import Hero from '@/components/Hero'
+import ProjectCarousel from '@/components/ProjectCarousel'
 import AdSenseCarousel from '@/components/AdSenseCarousel'
-import Projects from '@/components/Projects'
-import Footer from '@/components/Footer'
 
 export const dynamic = 'force-dynamic'
 
 export default function Home() {
   return (
-    <main id="main-content" className="min-h-screen overflow-hidden">
-      <Header />
-      <Hero />
+    <main id="main-content" className="min-h-screen bg-gray-900 overflow-hidden">
+      <ProjectCarousel />
       <AdSenseCarousel />
-      <Projects />
-      <Footer />
     </main>
   )
 }
