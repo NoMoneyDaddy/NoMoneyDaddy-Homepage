@@ -37,8 +37,9 @@ export default function Projects() {
                   <div className="text-6xl">{project.icon}</div>
                   <a
                     href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={project.url === '#' ? undefined : '_blank'}
+                    rel={project.url === '#' ? undefined : 'noopener noreferrer'}
+                    aria-label={`前往 ${project.title} 網站`}
                     className="p-3 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,8 +69,8 @@ export default function Projects() {
                 {/* 按鈕 */}
                 <a
                   href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={project.url === '#' ? undefined : '_blank'}
+                  rel={project.url === '#' ? undefined : 'noopener noreferrer'}
                   className="block w-full btn-primary text-center group/btn hover:shadow-lg hover:-translate-y-1 transition-all"
                 >
                   <span>立即試用</span>

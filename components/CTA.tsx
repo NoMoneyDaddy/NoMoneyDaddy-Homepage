@@ -45,8 +45,8 @@ export default function CTA() {
 
                 <a
                   href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={project.url === '#' ? undefined : '_blank'}
+                  rel={project.url === '#' ? undefined : 'noopener noreferrer'}
                   className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 group-hover:gap-3 transition-all duration-300"
                 >
                   開始免費試用
@@ -84,7 +84,7 @@ export default function CTA() {
             <p className="text-gray-600 mb-6">還在猶豫？看看其他用戶怎麼說</p>
             <div className="inline-flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <div className="flex gap-1">
+                <div className="flex gap-1" aria-hidden="true">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-400">★</span>
                   ))}

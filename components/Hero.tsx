@@ -82,7 +82,9 @@ export default function Hero() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">iWantPo</h3>
                 <p className="text-sm text-gray-600">自動化 Threads 發文平台</p>
                 <div className="mt-4 flex items-center gap-2">
-                  <div className="flex-1 bg-blue-200 h-2 rounded-full" style={{ width: '80%' }} />
+                  <div className="flex-1 bg-blue-100 h-2 rounded-full overflow-hidden">
+                    <div className="bg-blue-500 h-full rounded-full" style={{ width: '80%' }} />
+                  </div>
                   <span className="text-xs text-gray-500">80%</span>
                 </div>
               </div>
@@ -93,7 +95,9 @@ export default function Hero() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">FamilyPlay</h3>
                 <p className="text-sm text-gray-600">30秒親子互動遊戲</p>
                 <div className="mt-4 flex items-center gap-2">
-                  <div className="flex-1 bg-purple-200 h-2 rounded-full" style={{ width: '90%' }} />
+                  <div className="flex-1 bg-purple-100 h-2 rounded-full overflow-hidden">
+                    <div className="bg-purple-500 h-full rounded-full" style={{ width: '90%' }} />
+                  </div>
                   <span className="text-xs text-gray-500">90%</span>
                 </div>
               </div>
