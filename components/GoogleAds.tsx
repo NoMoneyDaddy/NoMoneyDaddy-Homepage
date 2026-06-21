@@ -26,8 +26,8 @@ export default function GoogleAds() {
               width: '728px',
               height: '90px',
             }}
-            data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
-            data-ad-slot="xxxxxxxx"
+            data-ad-client="ca-pub-2955827057895484"
+            data-ad-slot="YOUR_AD_SLOT_ID"
           ></ins>
         </div>
       </div>

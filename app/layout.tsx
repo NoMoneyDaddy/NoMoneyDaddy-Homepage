@@ -24,7 +24,7 @@ export default function RootLayout({
         <title>NoMoneyDaddy - Portfolio & Projects</title>
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2955827057895484"
           crossOrigin="anonymous"
         ></script>
       </head>
