@@ -36,6 +36,8 @@ export default function Hero() {
               <span className="font-semibold">iWantPo：</span> Shopee 分潤人員的自動化行銷工具
               <br className="hidden md:block" />
               <span className="font-semibold">FamilyPlay：</span> 現代父母的 30 秒親子互動方案
+              <br className="hidden md:block" />
+              <span className="font-semibold">BingoKing：</span> 台灣彩券的智能輔助決策系統
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -59,7 +61,7 @@ export default function Hero() {
             {/* 統計數據 */}
             <div className="mt-12 grid grid-cols-3 gap-4 md:gap-8">
               <div className="border-l-4 border-blue-600 pl-4">
-                <p className="text-3xl font-bold text-gray-900">2</p>
+                <p className="text-3xl font-bold text-gray-900">3</p>
                 <p className="text-sm text-gray-600">個實用工具</p>
               </div>
               <div className="border-l-4 border-purple-600 pl-4">
