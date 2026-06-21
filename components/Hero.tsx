@@ -4,22 +4,15 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-50"></div>
-
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-
       <div className="section-container relative z-10 text-center animate-slideUp">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Welcome to{' '}
-          <span className="gradient-text">NoMoneyDaddy</span>
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900">
+          我的網頁作品
         </h1>
 
-        <p className="text-lg md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Innovative solutions for the modern world. Explore our projects and
-          discover what we&apos;re building.
+        <p className="text-lg md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          一些實驗和練習專案
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -27,7 +20,7 @@ export default function Hero() {
             href="#projects"
             className="btn-primary inline-flex items-center justify-center"
           >
-            Explore Projects
+            查看專案
             <svg
               className="w-5 h-5 ml-2"
               fill="none"
@@ -46,22 +39,22 @@ export default function Hero() {
             href="#contact"
             className="btn-secondary inline-flex items-center justify-center"
           >
-            Get in Touch
+            聯絡我們
           </a>
         </div>
 
         <div className="mt-16 grid grid-cols-3 gap-8 text-center">
           <div>
-            <p className="text-3xl font-bold text-blue-400">2+</p>
-            <p className="text-gray-400">Active Projects</p>
+            <p className="text-3xl font-bold text-blue-600">2</p>
+            <p className="text-gray-600">個專案</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-cyan-400">10k+</p>
-            <p className="text-gray-400">Total Users</p>
+            <p className="text-3xl font-bold text-blue-600">MVP</p>
+            <p className="text-gray-600">版本階段</p>
           </div>
           <div>
-            <p className="text-3xl font-bold text-blue-400">100%</p>
-            <p className="text-gray-400">Passion Driven</p>
+            <p className="text-3xl font-bold text-blue-600">開源</p>
+            <p className="text-gray-600">源碼公開</p>
           </div>
         </div>
       </div>

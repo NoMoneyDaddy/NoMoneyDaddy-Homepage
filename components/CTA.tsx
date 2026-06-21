@@ -1,5 +1,7 @@
 'use client'
 
+import { projects } from '@/config/projects'
+
 export default function CTA() {
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
@@ -8,35 +10,39 @@ export default function CTA() {
 
       <div className="section-container relative z-10 text-center animate-slideUp">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          Ready to Explore?
+          試試看吧
         </h2>
 
-        <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-          Join thousands of users enjoying our innovative platforms and become
-          part of our growing community.
+        <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+          點擊下方按鈕，試用這些網頁應用。
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://iwantpo.nomoneydadddy.app/" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Start with iWantPo
-          </a>
-          <a href="https://familyplay.nomoneydaddy.app/" target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Start with FamilyPlay
-          </a>
+          {projects.map((project) => (
+            <a
+              key={project.id}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Start with {project.title}
+            </a>
+          ))}
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-6 rounded-lg bg-slate-800/50 border border-slate-700">
-            <p className="text-2xl font-bold text-blue-400 mb-2">100%</p>
-            <p className="text-gray-400">Free to Use</p>
+          <div className="p-6 rounded-lg bg-blue-50 border border-blue-200">
+            <p className="text-2xl font-bold text-blue-600 mb-2">免費</p>
+            <p className="text-gray-600">無需付費使用</p>
           </div>
-          <div className="p-6 rounded-lg bg-slate-800/50 border border-slate-700">
-            <p className="text-2xl font-bold text-cyan-400 mb-2">24/7</p>
-            <p className="text-gray-400">Always Available</p>
+          <div className="p-6 rounded-lg bg-blue-50 border border-blue-200">
+            <p className="text-2xl font-bold text-blue-600 mb-2">開源</p>
+            <p className="text-gray-600">完全開放源碼</p>
           </div>
-          <div className="p-6 rounded-lg bg-slate-800/50 border border-slate-700">
-            <p className="text-2xl font-bold text-blue-400 mb-2">∞</p>
-            <p className="text-gray-400">Unlimited Possibilities</p>
+          <div className="p-6 rounded-lg bg-blue-50 border border-blue-200">
+            <p className="text-2xl font-bold text-blue-600 mb-2">實驗</p>
+            <p className="text-gray-600">學習和練習專案</p>
           </div>
         </div>
       </div>

@@ -8,15 +8,15 @@
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition-colors duration-300;
+    @apply px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg font-semibold transition-colors duration-300 shadow-sm;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 border-2 border-blue-500 text-blue-400 hover:bg-blue-500/10 rounded-lg font-semibold transition-colors duration-300;
+    @apply px-6 py-3 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg font-semibold transition-colors duration-300;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent;
+    @apply text-blue-600;
   }
 
   .card-hover {

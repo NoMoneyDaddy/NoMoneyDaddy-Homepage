@@ -14,9 +14,9 @@ export default function Header() {
   ]
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-700">
+    <header className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
       <nav className="section-container flex justify-between items-center h-16">
-        <Link href="#home" className="text-2xl font-bold gradient-text" aria-label="NoMoneyDaddy home">
+        <Link href="#home" className="text-2xl font-bold text-blue-600" aria-label="NoMoneyDaddy home">
           NoMoneyDaddy
         </Link>
 
@@ -25,7 +25,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+              className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
             >
               {item.label}
             </a>
@@ -34,7 +34,7 @@ export default function Header() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 hover:bg-slate-800 rounded-lg"
+          className="md:hidden p-2 hover:bg-gray-100 rounded-lg"
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
         >
@@ -55,13 +55,13 @@ export default function Header() {
         </button>
 
         {isOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-slate-900 border-b border-slate-700 md:hidden">
+          <div className="absolute top-16 left-0 right-0 bg-white border-b border-gray-200 md:hidden">
             <div className="section-container py-4 flex flex-col gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+                  className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

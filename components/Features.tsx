@@ -3,34 +3,34 @@
 export default function Features() {
   const features = [
     {
-      title: 'User-Centric Design',
-      description: 'Beautiful, intuitive interfaces built with user experience at the forefront.',
+      title: '簡潔易用',
+      description: '專注核心功能，避免過度複雜。',
       icon: '✨',
     },
     {
-      title: 'Scalable Architecture',
-      description: 'Built to grow with your needs, handling thousands of users seamlessly.',
+      title: '快速反應',
+      description: '輕量級設計，快速加載和響應。',
       icon: '⚡',
     },
     {
-      title: 'Community Focused',
-      description: 'We believe in the power of community and build platforms that bring people together.',
-      icon: '🤝',
+      title: '完全開源',
+      description: '代碼公開，可以自由查看和修改。',
+      icon: '🔓',
     },
     {
-      title: 'Mobile First',
-      description: 'Optimized for every device, from smartphones to desktops.',
+      title: '跨設備適配',
+      description: '在手機、平板和電腦上都能使用。',
       icon: '📱',
     },
     {
-      title: 'Real-time Updates',
-      description: 'Live notifications and instant updates keep users engaged.',
-      icon: '🔔',
+      title: '持續迭代',
+      description: '根據反饋逐步改進功能。',
+      icon: '🔄',
     },
     {
-      title: 'Security & Privacy',
-      description: 'Your data is protected with industry-standard security practices.',
-      icon: '🔐',
+      title: '學習項目',
+      description: '展示實際開發和設計的經驗。',
+      icon: '📚',
     },
   ]
 
@@ -38,12 +38,11 @@ export default function Features() {
     <section id="features" className="py-20 relative">
       <div className="section-container">
         <div className="text-center mb-16 animate-slideUp">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Why Choose <span className="gradient-text">Us</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            為什麼選擇 <span className="gradient-text">我們</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Our projects are built with quality, innovation, and user satisfaction
-            in mind.
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            我們的專案以質量、創新和用戶滿意度為核心理念構建。
           </p>
         </div>
 
@@ -51,13 +50,13 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="card-hover group relative p-8 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50"
+              className="card-hover group relative p-8 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-lg"
             >
               <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">
+              <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>

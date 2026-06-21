@@ -1,30 +1,8 @@
 'use client'
 
+import { projects } from '@/config/projects'
+
 export default function Projects() {
-  const projects = [
-    {
-      id: 1,
-      title: 'iWantPo',
-      description: 'A comprehensive Shopee community platform for buyers and sellers to connect, share experiences, and grow together.',
-      longDescription: 'iWantPo is a modern community-driven platform built on top of Shopee ecosystem. It enables users to discover products, share reviews, and build meaningful connections.',
-      url: 'https://iwantpo.nomoneydadddy.app/',
-      github: 'https://github.com/NoMoneyDaddy/threadsposhopee',
-      features: ['Community Forum', 'Product Reviews', 'Seller Network', 'Real-time Chat'],
-      icon: '🛍️',
-      color: 'from-purple-500 to-pink-500',
-    },
-    {
-      id: 2,
-      title: 'FamilyPlay',
-      description: 'An interactive family gaming and entertainment platform that brings families together through fun, engaging activities.',
-      longDescription: 'FamilyPlay creates memorable moments for families with interactive games, challenges, and shared experiences designed for all ages.',
-      url: 'https://familyplay.nomoneydaddy.app/',
-      github: 'https://github.com/NoMoneyDaddy/familyplay',
-      features: ['Multiplayer Games', 'Family Challenges', 'Leaderboards', 'Rewards System'],
-      icon: '👨‍👩‍👧‍👦',
-      color: 'from-orange-500 to-red-500',
-    },
-  ]
 
   return (
     <section id="projects" className="py-20 relative">
@@ -32,12 +10,11 @@ export default function Projects() {
 
       <div className="section-container relative z-10">
         <div className="text-center mb-16 animate-slideUp">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our <span className="gradient-text">Projects</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            我的 <span className="gradient-text">網頁作品</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Innovative solutions designed to solve real-world problems and
-            improve user experiences.
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            創新的解決方案，解決現實問題，提升用戶體驗。
           </p>
         </div>
 
@@ -48,14 +25,14 @@ export default function Projects() {
               className={`card-hover group relative overflow-hidden rounded-2xl bg-gradient-to-br ${project.color} p-1`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative bg-slate-800 rounded-2xl p-8 h-full">
+              <div className="relative bg-white rounded-2xl p-8 h-full">
                 <div className="flex items-start justify-between mb-6">
                   <div className="text-5xl">{project.icon}</div>
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-slate-700/50 hover:bg-slate-700 transition-colors"
+                    className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
                   >
                     <svg
                       className="w-5 h-5"
@@ -73,18 +50,18 @@ export default function Projects() {
                   </a>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <p className="text-gray-300 mb-4">{project.longDescription}</p>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">{project.title}</h3>
+                <p className="text-gray-600 mb-4">{project.longDescription}</p>
 
                 <div className="mb-6">
-                  <p className="text-sm text-gray-400 mb-3 font-semibold">
+                  <p className="text-sm text-gray-600 mb-3 font-semibold">
                     Features:
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.features.map((feature) => (
                       <span
                         key={feature}
-                        className="px-3 py-1 rounded-full bg-slate-700/50 text-sm text-blue-300"
+                        className="px-3 py-1 rounded-full bg-blue-50 text-sm text-blue-700"
                       >
                         {feature}
                       </span>
@@ -99,7 +76,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="flex-1 btn-primary text-center"
                   >
-                    Visit Live
+                    查看 Demo
                   </a>
                   <a
                     href={project.github}
