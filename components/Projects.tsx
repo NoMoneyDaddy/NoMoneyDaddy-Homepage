@@ -55,7 +55,7 @@ export default function Projects() {
 
                 <div className="mb-6">
                   <p className="text-sm text-gray-600 mb-3 font-semibold">
-                    Features:
+                    功能特色：
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.features.map((feature) => (
@@ -69,24 +69,14 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 btn-primary text-center"
-                  >
-                    查看 Demo
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 btn-secondary text-center"
-                  >
-                    GitHub
-                  </a>
-                </div>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full btn-primary text-center"
+                >
+                  開始試用
+                </a>
               </div>
             </div>
           ))}

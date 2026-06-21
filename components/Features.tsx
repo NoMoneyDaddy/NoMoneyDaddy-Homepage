@@ -3,34 +3,34 @@
 export default function Features() {
   const features = [
     {
-      title: '簡潔易用',
-      description: '專注核心功能，避免過度複雜。',
+      title: '直覺易用',
+      description: '無需複雜學習，立即上手。',
       icon: '✨',
     },
     {
-      title: '快速反應',
-      description: '輕量級設計，快速加載和響應。',
+      title: '快速高效',
+      description: '優化性能，快速加載和響應。',
       icon: '⚡',
     },
     {
-      title: '完全開源',
-      description: '代碼公開，可以自由查看和修改。',
-      icon: '🔓',
+      title: '可靠安全',
+      description: '數據加密，隱私保護優先。',
+      icon: '🔒',
     },
     {
-      title: '跨設備適配',
-      description: '在手機、平板和電腦上都能使用。',
+      title: '全設備支持',
+      description: '手機、平板、電腦無縫同步。',
       icon: '📱',
     },
     {
-      title: '持續迭代',
-      description: '根據反饋逐步改進功能。',
-      icon: '🔄',
+      title: '24/7 服務',
+      description: '隨時隨地使用，不受限制。',
+      icon: '⏰',
     },
     {
-      title: '學習項目',
-      description: '展示實際開發和設計的經驗。',
-      icon: '📚',
+      title: '專業支持',
+      description: '遇到問題？快速反應的團隊在這裡。',
+      icon: '💬',
     },
   ]
 
@@ -39,10 +39,10 @@ export default function Features() {
       <div className="section-container">
         <div className="text-center mb-16 animate-slideUp">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            為什麼選擇 <span className="gradient-text">我們</span>
+            為什麼選擇 <span className="gradient-text">NoMoneyDaddy</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            我們的專案以質量、創新和用戶滿意度為核心理念構建。
+            專注於解決實際問題，以用戶體驗和可靠性為核心。
           </p>
         </div>
 

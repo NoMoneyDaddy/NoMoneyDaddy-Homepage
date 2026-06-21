@@ -13,8 +13,8 @@ export default function CTA() {
           試試看吧
         </h2>
 
-        <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-          點擊下方按鈕，試用這些網頁應用。
+        <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          立即開始體驗，解決您的生活和工作問題。
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -26,23 +26,23 @@ export default function CTA() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Start with {project.title}
+              試用 {project.title}
             </a>
           ))}
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-6 rounded-lg bg-blue-50 border border-blue-200">
-            <p className="text-2xl font-bold text-blue-600 mb-2">免費</p>
-            <p className="text-gray-600">無需付費使用</p>
+            <p className="text-2xl font-bold text-blue-600 mb-2">免費試用</p>
+            <p className="text-gray-600">30天完全免費體驗所有功能</p>
           </div>
           <div className="p-6 rounded-lg bg-blue-50 border border-blue-200">
-            <p className="text-2xl font-bold text-blue-600 mb-2">開源</p>
-            <p className="text-gray-600">完全開放源碼</p>
+            <p className="text-2xl font-bold text-blue-600 mb-2">快速上手</p>
+            <p className="text-gray-600">簡單直觀的介面，立即開始使用</p>
           </div>
           <div className="p-6 rounded-lg bg-blue-50 border border-blue-200">
-            <p className="text-2xl font-bold text-blue-600 mb-2">實驗</p>
-            <p className="text-gray-600">學習和練習專案</p>
+            <p className="text-2xl font-bold text-blue-600 mb-2">持續更新</p>
+            <p className="text-gray-600">不斷改進，根據用戶回饋優化</p>
           </div>
         </div>
       </div>

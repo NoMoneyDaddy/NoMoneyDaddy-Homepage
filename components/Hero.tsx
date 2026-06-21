@@ -8,11 +8,11 @@ export default function Hero() {
     >
       <div className="section-container relative z-10 text-center animate-slideUp">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900">
-          我的網頁作品
+          解決現實問題的工具
         </h1>
 
         <p className="text-lg md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          一些實驗和練習專案
+          為 Shopee 分潤人員和忙碌父母打造的實用應用
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -8,18 +8,18 @@ export default function Footer() {
   return (
     <footer className="relative bg-white border-t border-gray-200">
       <div className="section-container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold gradient-text mb-4">
               NoMoneyDaddy
             </h3>
             <p className="text-gray-600">
-              為現代世界構建創新解決方案。
+              為忙碌的現代人打造實用的工具和解決方案。
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-gray-900">網頁作品</h4>
+            <h4 className="font-semibold mb-4 text-gray-900">我的作品</h4>
             <ul className="space-y-2">
               {projects.map((project) => (
                 <li key={project.id}>
@@ -37,26 +37,18 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-gray-900">GitHub 源碼</h4>
+            <h4 className="font-semibold mb-4 text-gray-900">資訊</h4>
             <ul className="space-y-2">
-              {projects.map((project) => (
-                <li key={project.id}>
+              {socialLinks.email !== 'contact@example.com' && (
+                <li>
                   <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`mailto:${socialLinks.email}`}
                     className="text-gray-600 hover:text-blue-600 transition-colors"
                   >
-                    {project.title} 源碼
+                    📧 {socialLinks.email}
                   </a>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4 text-gray-900">法律</h4>
-            <ul className="space-y-2">
+              )}
               <li>
                 <a
                   href="#"
