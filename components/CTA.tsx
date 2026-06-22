@@ -15,15 +15,15 @@ export default function CTA() {
       <div className="section-container relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* 標題區 */}
-          <div className="text-center mb-8 sm:mb-10 md:mb-12 animate-slideUp px-2">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 animate-slideUp px-2 sm:px-0">
             <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-green-100 text-green-700 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
               ✨ 現在就開始
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
+            <h2 className="heading-safe text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
               準備試試看嗎？
             </h2>
-            <p className="text-sm sm:text-base md:text-xl text-gray-600 leading-relaxed">
-              探索我們的實用工具，解決日常問題。
+            <p className="heading-safe text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+              探索我們的實用工具，立即解決您的實際問題。
             </p>
           </div>
 

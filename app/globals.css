@@ -47,6 +47,35 @@
   .animate-slideUp {
     animation: slideUp 0.6s ease-out;
   }
+
+  /* 強化中文斷字控制 */
+  .text-nowrap-safe {
+    word-break: keep-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: unset;
+  }
+
+  .heading-safe {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.2;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+  }
+
+  /* 強化分詞控制 - 防止不當斷行 */
+  .text-safe {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: none;
+  }
+
+  /* 關鍵短語不換行 */
+  .nowrap-phrase {
+    white-space: nowrap;
+  }
 }
 
 * {
@@ -72,4 +101,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   word-break: keep-all;
   overflow-wrap: break-word;
+  line-height: 1.2;
+  hyphens: none;
 }

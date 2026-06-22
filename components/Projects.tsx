@@ -9,14 +9,14 @@ export default function Projects() {
     <section id="projects" className="py-12 sm:py-16 md:py-20 relative bg-gray-50">
       <div className="section-container relative z-10">
         {/* 標題 */}
-        <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-slideUp">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-slideUp px-2 sm:px-0">
           <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-100 text-blue-700 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
             ✨ 我們的作品
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">
-            為現實問題<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> 設計的解決方案</span>
+          <h2 className="heading-safe text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">
+            為現實問題<br className="hidden sm:block" /><span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">設計的解決方案</span>
           </h2>
-          <p className="text-sm sm:text-base md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
+          <p className="heading-safe text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             每一個應用都專注於解決特定用戶群的實際痛點
           </p>
         </div>
