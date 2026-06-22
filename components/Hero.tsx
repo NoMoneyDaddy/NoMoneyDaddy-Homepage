@@ -1,5 +1,7 @@
 'use client'
 
+import { PROGRESS } from '@/lib/constants'
+
 export default function Hero() {
   return (
     <section
@@ -85,9 +87,9 @@ export default function Hero() {
                 <p className="text-sm text-gray-600">自動化 Threads 發文平台</p>
                 <div className="mt-4 flex items-center gap-2">
                   <div className="flex-1 bg-blue-100 h-2 rounded-full overflow-hidden">
-                    <div className="bg-blue-500 h-full rounded-full w-4/5" />
+                    <div className="bg-blue-500 h-full rounded-full" style={{ width: `${PROGRESS.iWantPo}%` }} />
                   </div>
-                  <span className="text-xs text-gray-500">80%</span>
+                  <span className="text-xs text-gray-500">{PROGRESS.iWantPo}%</span>
                 </div>
               </div>
 
@@ -98,9 +100,9 @@ export default function Hero() {
                 <p className="text-sm text-gray-600">30秒親子互動遊戲</p>
                 <div className="mt-4 flex items-center gap-2">
                   <div className="flex-1 bg-purple-100 h-2 rounded-full overflow-hidden">
-                    <div className="bg-purple-500 h-full rounded-full w-9/10" />
+                    <div className="bg-purple-500 h-full rounded-full" style={{ width: `${PROGRESS.FamilyPlay}%` }} />
                   </div>
-                  <span className="text-xs text-gray-500">90%</span>
+                  <span className="text-xs text-gray-500">{PROGRESS.FamilyPlay}%</span>
                 </div>
               </div>
             </div>
