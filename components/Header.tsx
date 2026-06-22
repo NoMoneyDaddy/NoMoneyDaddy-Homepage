@@ -15,9 +15,9 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
-      <nav className="section-container flex justify-between items-center h-16">
-        <Link href="#home" className="text-lg font-bold text-blue-600" aria-label="NoMoneyDaddy 奶爸實驗室">
-          <span className="block text-sm font-semibold">NoMoneyDaddy</span>
+      <nav className="section-container flex justify-between items-center h-14 sm:h-16">
+        <Link href="#home" className="text-sm sm:text-lg font-bold text-blue-600 leading-tight" aria-label="NoMoneyDaddy 奶爸實驗室">
+          <span className="block text-xs sm:text-sm font-semibold">NoMoneyDaddy</span>
           <span className="text-xs text-gray-600">奶爸實驗室</span>
         </Link>
 
@@ -26,7 +26,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium text-sm"
             >
               {item.label}
             </a>
@@ -35,7 +35,7 @@ export default function Header() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 hover:bg-gray-100 rounded-lg"
+          className="md:hidden p-2.5 hover:bg-gray-100 rounded-lg min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label="Toggle navigation menu"
           aria-expanded={isOpen}
         >
@@ -56,13 +56,13 @@ export default function Header() {
         </button>
 
         {isOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-white border-b border-gray-200 md:hidden">
-            <div className="section-container py-4 flex flex-col gap-4">
+          <div className="absolute top-14 sm:top-16 left-0 right-0 bg-white border-b border-gray-200 md:hidden">
+            <div className="section-container py-4 flex flex-col gap-3">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium"
+                  className="text-gray-600 hover:text-blue-600 transition-colors duration-300 font-medium py-2 text-sm"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
