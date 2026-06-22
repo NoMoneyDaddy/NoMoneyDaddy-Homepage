@@ -4,6 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'NoMoneyDaddy 奶爸實驗室 - 解決現實問題的工具',
   description: '奶爸實驗室｜為 Shopee 分潤人員和忙碌父母打造的實用應用。iWantPo 自動發文平台 × FamilyPlay 親子遊戲',
+  viewport: 'width=device-width, initial-scale=1.0, viewport-fit=cover',
   openGraph: {
     title: 'NoMoneyDaddy 奶爸實驗室',
     description: '為 Shopee 分潤人員和忙碌父母打造的實用應用',

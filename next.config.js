@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {
@@ -16,10 +13,6 @@ const nextConfig = {
       },
     ],
   },
-  onDemandEntries: {
-    maxInactiveAge: 60 * 1000,
-    pagesBufferLength: 5,
-  },
   headers: async () => {
     return [
       {
@@ -27,7 +20,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: `default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';`.replace(
+            value: `default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://pagead2.googlesyndication.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';`.replace(
               /\s+/g,
               ' '
             ),
@@ -55,9 +48,6 @@ const nextConfig = {
         ],
       },
     ]
-  },
-  typescript: {
-    ignoreBuildErrors: true,
   },
 }
 

@@ -15,12 +15,25 @@ export default function GoogleAds() {
   }, [])
 
   return (
-    <section className="py-12">
+    <section className="py-8 sm:py-12">
       <div className="section-container">
-        {/* Responsive Ad Unit - 728x90, 468x60 or 320x50 */}
-        <div className="flex justify-center mb-8">
+        {/* Responsive Ad Unit - Mobile: 320x50, Tablet/Desktop: 728x90 */}
+        <div className="flex justify-center mb-6 sm:mb-8">
+          {/* Mobile ad (320x50) */}
           <ins
-            className="adsbygoogle"
+            className="adsbygoogle sm:hidden"
+            style={{
+              display: 'inline-block',
+              width: '320px',
+              height: '50px',
+            }}
+            data-ad-client="ca-pub-2955827057895484"
+            data-ad-slot="YOUR_AD_SLOT_ID"
+          ></ins>
+
+          {/* Tablet/Desktop ad (728x90) */}
+          <ins
+            className="adsbygoogle hidden sm:inline-block"
             style={{
               display: 'inline-block',
               width: '728px',
@@ -28,6 +41,7 @@ export default function GoogleAds() {
             }}
             data-ad-client="ca-pub-2955827057895484"
             data-ad-slot="YOUR_AD_SLOT_ID"
+            data-ad-format="horizontal"
           ></ins>
         </div>
       </div>

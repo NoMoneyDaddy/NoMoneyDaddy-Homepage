@@ -49,32 +49,32 @@ export default function Features() {
   ]
 
   return (
-    <section id="features" className="py-20 relative overflow-hidden">
+    <section id="features" className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
       {/* 背景裝飾 */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50 to-white" />
-      <div className="absolute top-40 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10" />
-      <div className="absolute bottom-40 right-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10" />
+      <div className="absolute top-40 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 hidden sm:block" />
+      <div className="absolute bottom-40 right-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 hidden sm:block" />
 
       <div className="section-container relative z-10">
         {/* 標題 */}
-        <div className="text-center mb-16 animate-slideUp">
-          <span className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-4">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-slideUp">
+          <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-100 text-purple-700 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
             💪 為什麼選擇我們
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">
             構建在實際需求之上的<span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> 產品優勢</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-xl text-gray-600 max-w-2xl mx-auto px-2">
             每個特色都是為了解決您的實際痛點而設計
           </p>
         </div>
 
         {/* 特色網格 */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="group relative overflow-hidden rounded-2xl bg-white p-8 border border-gray-100 hover:border-transparent transition-all duration-300 hover:shadow-2xl"
+              className="group relative overflow-hidden rounded-2xl bg-white p-6 sm:p-8 border border-gray-100 hover:border-transparent transition-all duration-300 hover:shadow-2xl"
             >
               {/* 背景漸變 */}
               <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
@@ -84,22 +84,22 @@ export default function Features() {
 
               {/* 內容 */}
               <div className="relative">
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} text-white text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br ${feature.color} text-white text-2xl sm:text-3xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   {feature.icon}
                 </div>
 
-                <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300">
                   {feature.title}
                 </h3>
 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   {feature.description}
                 </p>
 
                 {/* 底部箭頭 */}
                 <a
                   href="#contact"
-                  className="mt-6 inline-flex items-center text-blue-600 font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300"
+                  className="mt-4 sm:mt-6 inline-flex items-center text-blue-600 font-semibold text-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300"
                 >
                   了解更多
                   <ArrowIcon className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform" />
@@ -110,11 +110,11 @@ export default function Features() {
         </div>
 
         {/* 底部 CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-6">準備好體驗差異了嗎？</p>
+        <div className="mt-10 sm:mt-12 md:mt-16 text-center px-2">
+          <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">準備好體驗差異了嗎？</p>
           <a
             href="#contact"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:-translate-y-1 transition-all duration-300 min-h-[44px] flex items-center justify-center"
           >
             立即開始免費試用
           </a>
