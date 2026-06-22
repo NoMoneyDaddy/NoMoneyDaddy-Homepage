@@ -57,7 +57,6 @@
   }
 
   .heading-safe {
-    word-break: keep-all;
     word-wrap: break-word;
     overflow-wrap: break-word;
     line-height: 1.2;
@@ -68,7 +67,6 @@
 
   /* 強化分詞控制 - 防止不當斷行 */
   .text-safe {
-    word-break: keep-all;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: none;

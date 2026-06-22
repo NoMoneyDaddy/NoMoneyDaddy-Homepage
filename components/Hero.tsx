@@ -26,7 +26,7 @@ export default function Hero() {
 
             {/* 主標題 - 強化斷字控制 */}
             <h1 className="heading-safe text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-gray-900">
-              打造您的<br className="block sm:hidden" />
+              <span className="block sm:inline">打造您的</span>
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">智能工具生態</span>
             </h1>
 
@@ -58,7 +58,7 @@ export default function Hero() {
             </div>
 
             {/* CTA 按鈕 - 移動優先 */}
-            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a
                 href="#projects"
                 className="btn-primary inline-flex items-center justify-center gap-2 hover:shadow-lg hover:-translate-y-1 transition-all min-h-[48px] sm:min-h-[44px] px-4 sm:px-6 py-3 sm:py-2.5 text-sm sm:text-base w-full sm:w-auto"
