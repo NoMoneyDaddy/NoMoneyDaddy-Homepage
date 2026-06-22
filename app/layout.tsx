@@ -27,7 +27,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body className="bg-white text-gray-900">
+      <body className="bg-slate-950 text-white">
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-blue-600">
           Skip to main content
         </a>
